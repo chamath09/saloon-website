@@ -4,13 +4,13 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1595959183082-7bce707828ac?q=80&w=2071&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop',
     category: 'Bridal',
-    alt: 'Sri Lankan Bridal Makeup',
+    alt: 'Bridal Makeup',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop',
     category: 'Hair',
     alt: 'Elegant Hair Styling',
     span: 'col-span-1 row-span-2',
@@ -28,13 +28,13 @@ const galleryImages = [
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop',
     category: 'Makeup',
     alt: 'Before and After',
     span: 'col-span-1 row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1583001931096-959e9ad7b535?q=80&w=2070&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop',
     category: 'Bridal',
     alt: 'Bridal Portrait',
     span: 'col-span-1 row-span-1',

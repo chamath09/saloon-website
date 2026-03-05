@@ -35,7 +35,7 @@ const services = [
     title: 'Eyebrow Threading',
     description: 'Precise shaping and threading for perfectly defined brows.',
     price: 'From $15',
-    image: 'https://images.unsplash.com/photo-1522337360705-8b13d5230394?q=80&w=2074&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1598452963314-b09f397a5c48?q=80&w=2070&auto=format&fit=crop',
   },
 ];
 
