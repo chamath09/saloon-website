@@ -58,15 +58,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block text-rose-gold tracking-[0.2em] uppercase font-medium mb-4 text-sm md:text-base bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full border border-white/20"
-        >
-          Welcome to Luxe Beauty
-        </motion.span>
-        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
