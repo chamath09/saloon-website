@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Star, Award, Smile, Users, Home } from 'lucide-react';
+import { Star, Award, Smile, Users, Home, ShieldCheck } from 'lucide-react';
 
 const features = [
   { icon: Users, title: 'Professional Artists', desc: 'Highly trained and experienced beauty experts.' },
@@ -7,6 +7,7 @@ const features = [
   { icon: Smile, title: 'Friendly Service', desc: 'Warm and welcoming staff dedicated to you.' },
   { icon: Star, title: 'Bridal Specialists', desc: 'Experts in traditional and modern bridal looks.' },
   { icon: Home, title: 'Modern Environment', desc: 'Clean, luxurious, and relaxing atmosphere.' },
+  { icon: ShieldCheck, title: 'Hygiene & Safety', desc: 'Strict sanitization protocols for your safety.' },
 ];
 
 export default function WhyChooseUs() {
@@ -20,7 +21,7 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -28,9 +29,9 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center text-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-rose-gold shadow-md mb-4">
+              <div className="w-16 h-16 bg-rose-gold/10 rounded-full flex items-center justify-center text-rose-gold mb-4">
                 <feature.icon size={32} />
               </div>
               <h3 className="text-lg font-semibold text-charcoal mb-2">{feature.title}</h3>

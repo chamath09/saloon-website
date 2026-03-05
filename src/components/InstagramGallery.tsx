@@ -3,9 +3,9 @@ import { Instagram } from 'lucide-react';
 
 const instaImages = [
   'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1935&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1522337360705-8b13d5230394?q=80&w=2074&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1596462502278-27bfdd403348?q=80&w=2066&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop',
 ];
 
 export default function InstagramGallery() {
