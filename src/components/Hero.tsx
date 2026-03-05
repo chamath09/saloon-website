@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import ThreeBackground from './ThreeBackground';
 
 export default function Hero() {
   const ref = useRef(null);
@@ -11,23 +12,6 @@ export default function Hero() {
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   // Removed opacity transform to prevent white-on-white text issue during scroll
-
-  const [sparkles, setSparkles] = useState<{ id: number; style: { left: string; top: string; width: string; height: string; delay: number; duration: number } }[]>([]);
-
-  useEffect(() => {
-    const newSparkles = [...Array(12)].map((_, i) => ({
-      id: i,
-      style: {
-        left: Math.random() * 100 + '%',
-        top: Math.random() * 100 + '%',
-        width: Math.random() * 4 + 2 + 'px',
-        height: Math.random() * 4 + 2 + 'px',
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
-      },
-    }));
-    setSparkles(newSparkles);
-  }, []);
 
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -59,36 +43,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/50" />
       </motion.div>
 
-      {/* Floating Sparkles Animation */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {sparkles.map((sparkle) => (
-          <motion.div
-            key={sparkle.id}
-            className="absolute bg-rose-gold/60 rounded-full blur-[1px]"
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{
-              y: [0, -80],
-              opacity: [0, 0.8, 0],
-              scale: [0, 1.2, 0],
-            }}
-            transition={{
-              duration: sparkle.style.duration,
-              repeat: Infinity,
-              delay: sparkle.style.delay,
-              ease: "easeInOut",
-            }}
-            style={{
-              left: sparkle.style.left,
-              top: sparkle.style.top,
-              width: sparkle.style.width,
-              height: sparkle.style.height,
-            }}
-          />
-        ))}
-      </div>
+      {/* Three.js Background Animation */}
+      <ThreeBackground />
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
