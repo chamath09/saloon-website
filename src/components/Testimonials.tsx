@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 
@@ -42,7 +42,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-rose-gold font-medium tracking-widest uppercase text-sm">Testimonials</span>
@@ -72,13 +72,26 @@ export default function Testimonials() {
                 slidesPerView: 3,
               },
             }}
-            className="pb-12"
+            className="!pb-16" // Increased padding for pagination
           >
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index} className="h-auto py-4">
-                <div className="bg-white p-8 rounded-2xl relative h-full flex flex-col shadow-lg border border-rose-gold/10 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-soft-beige shadow-md">
+              <SwiperSlide key={index} className="h-auto">
+                <div className="bg-white p-8 md:p-10 rounded-2xl h-full flex flex-col shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
+                  {/* Decorative Quote Icon */}
+                  <Quote className="absolute top-6 right-6 text-rose-gold/10 w-16 h-16 transform -scale-x-100 group-hover:scale-110 transition-transform duration-500" />
+                  
+                  <div className="flex items-center gap-1 text-champagne-gold mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={18} fill="currentColor" className="stroke-none" />
+                    ))}
+                  </div>
+
+                  <p className="text-gray-600 text-lg leading-relaxed italic mb-8 flex-grow relative z-10">
+                    "{testimonial.text}"
+                  </p>
+
+                  <div className="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-rose-gold/20 flex-shrink-0">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -86,16 +99,10 @@ export default function Testimonials() {
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                  </div>
-                  <div className="flex justify-center mb-4 text-champagne-gold">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 text-center italic mb-6 flex-grow">"{testimonial.text}"</p>
-                  <div className="text-center mt-auto">
-                    <h4 className="font-display text-xl text-charcoal">{testimonial.name}</h4>
-                    <p className="text-rose-gold text-sm uppercase tracking-wide">{testimonial.role}</p>
+                    <div>
+                      <h4 className="font-display text-lg text-charcoal font-medium">{testimonial.name}</h4>
+                      <p className="text-rose-gold text-xs uppercase tracking-wider font-medium">{testimonial.role}</p>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
